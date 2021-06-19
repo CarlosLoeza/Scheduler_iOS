@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Schedule" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hck-Xf-Vz3">
+                                <rect key="frame" x="141" y="677" width="133" height="30"/>
+                                <state key="normal" title="Photo"/>
+                                <connections>
+                                    <action selector="btnClicked" destination="BYZ-38-t0r" eventType="touchUpInside" id="qX4-UL-eVY"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XUP-bO-hmC">
+                                <rect key="frame" x="141" y="715" width="134" height="30"/>
+                                <state key="normal" title="Send"/>
+                                <connections>
+                                    <action selector="save:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rEH-Ae-OgX"/>
+                                    <action selector="send_image:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wjU-MS-0d0"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imageView" highlightedImage="imageView" translatesAutoresizingMaskIntoConstraints="NO" id="z6p-1X-p8P" userLabel="imageView" customClass="placeHolder">
+                                <rect key="frame" x="23" y="201" width="368" height="371"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="371" id="Ooo-Et-KkE"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="XUP-bO-hmC" firstAttribute="top" secondItem="Hck-Xf-Vz3" secondAttribute="bottom" constant="8" symbolic="YES" id="7h5-OB-HMP"/>
+                            <constraint firstItem="Hck-Xf-Vz3" firstAttribute="leading" secondItem="XUP-bO-hmC" secondAttribute="leading" id="DXP-yY-0go"/>
+                            <constraint firstItem="Hck-Xf-Vz3" firstAttribute="centerX" secondItem="z6p-1X-p8P" secondAttribute="centerX" id="LYO-tS-3hP"/>
+                            <constraint firstItem="Hck-Xf-Vz3" firstAttribute="centerX" secondItem="XUP-bO-hmC" secondAttribute="centerX" id="MyZ-oX-FuL"/>
+                            <constraint firstItem="z6p-1X-p8P" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="23" id="evE-5f-Rxv"/>
+                            <constraint firstItem="Hck-Xf-Vz3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="141" id="f4f-w7-OE4"/>
+                            <constraint firstItem="z6p-1X-p8P" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="157" id="lYr-8X-pO4"/>
+                            <constraint firstItem="Hck-Xf-Vz3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mzd-8e-CDH"/>
+                            <constraint firstAttribute="bottom" secondItem="Hck-Xf-Vz3" secondAttribute="bottom" constant="189" id="z6i-1A-G8E"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="z6p-1X-p8P" id="2Pg-zc-kyG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="34.782608695652179" y="93.75"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="imageView" width="128" height="128"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
