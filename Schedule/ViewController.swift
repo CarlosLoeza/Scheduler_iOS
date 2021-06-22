@@ -1,7 +1,8 @@
 import UIKit
 
 class ViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate  {
-    @IBOutlet var imageView: UIImageView!
+    @IBOutlet var imageView: UIImageView! // Display's image selected by user's camera roll
+    @IBOutlet weak var server_string: UILabel! // Display's string received from server. (ex: course schedule list)
     var imagePicker = UIImagePickerController()
 
     
@@ -26,6 +27,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
             }
         }
     }
+    
     
     
     func postRequest(username: String, password: String, completion: @escaping ([String: Any]?, Error?) -> Void) {
