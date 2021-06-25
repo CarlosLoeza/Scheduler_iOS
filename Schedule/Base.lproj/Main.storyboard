@@ -54,6 +54,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemTealColor"/>
                         <constraints>
+                            <constraint firstItem="XUP-bO-hmC" firstAttribute="leading" secondItem="Hck-Xf-Vz3" secondAttribute="trailing" constant="47" id="54p-6y-kLC"/>
                             <constraint firstItem="XUP-bO-hmC" firstAttribute="top" secondItem="Hck-Xf-Vz3" secondAttribute="bottom" constant="-30" id="7h5-OB-HMP"/>
                             <constraint firstItem="Hck-Xf-Vz3" firstAttribute="leading" secondItem="XUP-bO-hmC" secondAttribute="leading" constant="-180" id="DXP-yY-0go"/>
                             <constraint firstItem="Hck-Xf-Vz3" firstAttribute="centerX" secondItem="z6p-1X-p8P" secondAttribute="centerX" constant="-88.5" id="LYO-tS-3hP"/>
