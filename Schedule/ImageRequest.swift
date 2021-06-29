@@ -9,6 +9,6 @@ import Foundation
 
 struct ImageRequest : Encodable
 {
-    let attachment : String
+    let attachment : Data
     let fileName : String
 }

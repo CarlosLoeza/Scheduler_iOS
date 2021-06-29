@@ -7,9 +7,11 @@
 	<key>CFBundleDisplayName</key>
 	<string></string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Please allow access to get photo from photo library</string>
+	<string></string>
+	<key>NSCameraUsageDescription</key>
+	<string></string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>Please allow access to save photo in your photo library</string>
+	<string></string>
 	<key>LSApplicationCategoryType</key>
 	<string></string>
 	<key>CFBundleDevelopmentRegion</key>

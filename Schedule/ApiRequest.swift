@@ -10,14 +10,19 @@ import Foundation
 struct ApiRequest{
     
     func uploadImage(data: Data, completionHandler: @escaping(_ result: ImageResponse)-> Void){
+        var response: URLResponse?
+        var error: NSError?
+       
+        
         let httpUtility = HttpUtility()
-        
-        let request = ImageRequest(attachment: data.base64EncodedString(), fileName: "Syllabus_Image")
-        
+
+        let request = ImageRequest(attachment: data, fileName: "Syllabus_Image")
+
         do{
             let postBody = try JSONEncoder().encode(request)
             httpUtility.postApiData(requestUrl: URL(string: "http://167.172.157.65:5000/api/send_syllabus")!, requestBody: postBody, resultType: ImageResponse.self){
                 (response) in _ = completionHandler(response)
+                
             }
         } catch let error {
             debugPrint(error)

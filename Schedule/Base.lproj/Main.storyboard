@@ -26,7 +26,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XUP-bO-hmC">
-                                <rect key="frame" x="232" y="754" width="134" height="30"/>
+                                <rect key="frame" x="140" y="813" width="134" height="30"/>
                                 <color key="backgroundColor" red="0.90620974229999995" green="0.98806586939999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Send"/>
@@ -34,7 +34,7 @@
                                     <action selector="send_image:" destination="BYZ-38-t0r" eventType="touchUpInside" id="j43-mB-tPh"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imageView" highlightedImage="imageView" translatesAutoresizingMaskIntoConstraints="NO" id="z6p-1X-p8P" userLabel="imageView" customClass="placeHolder">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imageView" highlightedImage="imageView" translatesAutoresizingMaskIntoConstraints="NO" id="z6p-1X-p8P" userLabel="imageView" customClass="placeHolder">
                                 <rect key="frame" x="16" y="95" width="382" height="371"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="371" id="Ooo-Et-KkE"/>
@@ -50,18 +50,30 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HLr-t9-Jjp">
+                                <rect key="frame" x="231" y="754" width="134" height="30"/>
+                                <color key="backgroundColor" red="0.90620974229999995" green="0.98806586939999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Camera"/>
+                                <connections>
+                                    <action selector="selectImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pKh-bA-yGe"/>
+                                    <action selector="send_image:" destination="BYZ-38-t0r" eventType="touchUpInside" id="q3V-f5-lqK"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemTealColor"/>
                         <constraints>
-                            <constraint firstItem="XUP-bO-hmC" firstAttribute="leading" secondItem="Hck-Xf-Vz3" secondAttribute="trailing" constant="47" id="54p-6y-kLC"/>
-                            <constraint firstItem="XUP-bO-hmC" firstAttribute="top" secondItem="Hck-Xf-Vz3" secondAttribute="bottom" constant="-30" id="7h5-OB-HMP"/>
-                            <constraint firstItem="Hck-Xf-Vz3" firstAttribute="leading" secondItem="XUP-bO-hmC" secondAttribute="leading" constant="-180" id="DXP-yY-0go"/>
+                            <constraint firstItem="HLr-t9-Jjp" firstAttribute="baseline" secondItem="Hck-Xf-Vz3" secondAttribute="baseline" id="3mo-8n-qnb"/>
+                            <constraint firstItem="XUP-bO-hmC" firstAttribute="top" secondItem="Hck-Xf-Vz3" secondAttribute="bottom" constant="29" id="I9K-cB-nEJ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="HLr-t9-Jjp" secondAttribute="trailing" constant="49" id="JkB-Vk-Udc"/>
                             <constraint firstItem="Hck-Xf-Vz3" firstAttribute="centerX" secondItem="z6p-1X-p8P" secondAttribute="centerX" constant="-88.5" id="LYO-tS-3hP"/>
-                            <constraint firstItem="Hck-Xf-Vz3" firstAttribute="centerX" secondItem="XUP-bO-hmC" secondAttribute="centerX" constant="-180.5" id="MyZ-oX-FuL"/>
+                            <constraint firstItem="HLr-t9-Jjp" firstAttribute="leading" secondItem="Hck-Xf-Vz3" secondAttribute="trailing" constant="46" id="O2I-NX-xV0"/>
+                            <constraint firstItem="XUP-bO-hmC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="140" id="WMt-L0-jR9"/>
                             <constraint firstItem="Hck-Xf-Vz3" firstAttribute="top" secondItem="fn9-yk-qV3" secondAttribute="bottom" constant="35" id="ern-g6-zn6"/>
                             <constraint firstItem="z6p-1X-p8P" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="evE-5f-Rxv"/>
                             <constraint firstItem="Hck-Xf-Vz3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="52" id="f4f-w7-OE4"/>
+                            <constraint firstItem="XUP-bO-hmC" firstAttribute="centerX" secondItem="fn9-yk-qV3" secondAttribute="centerX" id="hfi-Ik-wGR"/>
                             <constraint firstItem="z6p-1X-p8P" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="51" id="lYr-8X-pO4"/>
                             <constraint firstItem="fn9-yk-qV3" firstAttribute="centerX" secondItem="z6p-1X-p8P" secondAttribute="centerX" id="mfM-16-4G9"/>
                             <constraint firstItem="Hck-Xf-Vz3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-88.5" id="mzd-8e-CDH"/>

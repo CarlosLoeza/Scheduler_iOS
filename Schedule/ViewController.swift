@@ -24,6 +24,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         manager?.uploadImage(data: (self.imageView.image?.pngData())!, completionHandler: {
             (response) in
             
+            
             if (response.path.isEmpty == false){
                 let alert = UIAlertController(title: "Image", message: "Image uploaded", preferredStyle: .alert)
                 let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
@@ -34,7 +35,17 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         
     }
         
-
+    @IBAction func selectImage(_ sender: Any) {
+        let image = UIImagePickerController()
+        image.delegate = self
+        image.sourceType = .camera
+        image.allowsEditing = false
+        self.present(image, animated: true){
+        }
+    }
+    
+    
+    
    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
