@@ -22,7 +22,7 @@
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Photo"/>
                                 <connections>
-                                    <action selector="btnClicked" destination="BYZ-38-t0r" eventType="touchUpInside" id="qX4-UL-eVY"/>
+                                    <action selector="photoLibrary" destination="BYZ-38-t0r" eventType="touchUpInside" id="qX4-UL-eVY"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XUP-bO-hmC">
@@ -56,7 +56,7 @@
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Camera"/>
                                 <connections>
-                                    <action selector="selectImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jfH-ao-UwA"/>
+                                    <action selector="cameraImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jfH-ao-UwA"/>
                                 </connections>
                             </button>
                         </subviews>

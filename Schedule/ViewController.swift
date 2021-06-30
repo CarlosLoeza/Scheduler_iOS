@@ -11,7 +11,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     
     
     // Allow user to select image from camera roll
-    @IBAction func btnClicked() {
+    @IBAction func photoLibrary() {
         print("library")
         let image = UIImagePickerController()
         image.delegate = self
@@ -21,37 +21,32 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         }
     }
     
+    
 
-
-    // create a POST request
-    @IBAction func send_image(_ sender: UIButton) {
-        print("hello")
-        
-        uploadImageOne()
-//        manager?.uploadImage(data: (self.imageView.image?.pngData())!, completionHandler: {
-//            (response) in
-//
-//
-//            if (response.path.isEmpty == false){
-//                let alert = UIAlertController(title: "Image", message: "Image uploaded", preferredStyle: .alert)
-//                let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
-//                alert.addAction(okAction)
-//                self.present(alert, animated: true)
-//            }
-//        })
-        
+    @IBAction func cameraImage(_ sender: Any) {
+        let image = UIImagePickerController()
+        image.delegate = self
+        image.sourceType = .camera
+        image.allowsEditing = false
+        self.present(image, animated: true){
+        }
     }
     
     
-    // Your method to upload image with parameters to server.
 
+    // Send image from photo library or camera
+    @IBAction func send_image(_ sender: UIButton) {
+        // send image to server in order to perform text extraction using python
+        uploadImageOne()
+    }
+    
+    // upload image with parameters to server.
     func uploadImageOne(){
-        
         let url = URL(string: "http://167.172.157.65:5000/api/send_syllabus")!
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.setValue("image/jpeg", forHTTPHeaderField: "Content-Type")
-        var d = imageView.image!.pngData()! as Data
+        var d = imageView.image!.jpegData(compressionQuality: 0.8)! as Data
         
         let task = URLSession.shared.uploadTask(with: request, from: d) { data, response, error in
             if let error = error {
@@ -64,7 +59,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
                 return
             }
             if let mimeType = response.mimeType,
-                mimeType == "application/json",
+                mimeType == "image/jpeg",
                 let data = data,
                 let dataString = String(data: data, encoding: .utf8) {
                 print ("got data: \(dataString)")
@@ -73,29 +68,18 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         task.resume()
     }
     
-    @IBAction func selectImage(_ sender: Any) {
-        print("select")
-        let image = UIImagePickerController()
-        image.delegate = self
-        image.sourceType = .camera
-        image.allowsEditing = false
-        self.present(image, animated: true){
-        }
-    }
     
-    
-    
-   
+    // set the image selected by user and display it
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             imageView.image = image
         } else {
             print("ERROR")
         }
-
         dismiss(animated: true, completion: nil)
     }
 
+    
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
     }
@@ -104,6 +88,5 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         super.viewDidLoad()
             // Do any additional setup after loading the view.
         imagePicker.delegate = self
-        manager = ApiRequest()
     }
 }
