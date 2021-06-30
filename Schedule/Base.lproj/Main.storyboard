@@ -31,7 +31,7 @@
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Send"/>
                                 <connections>
-                                    <action selector="send_image:" destination="BYZ-38-t0r" eventType="touchUpInside" id="j43-mB-tPh"/>
+                                    <action selector="send_image:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TqS-bA-LWx"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imageView" highlightedImage="imageView" translatesAutoresizingMaskIntoConstraints="NO" id="z6p-1X-p8P" userLabel="imageView" customClass="placeHolder">
@@ -56,8 +56,7 @@
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Camera"/>
                                 <connections>
-                                    <action selector="selectImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pKh-bA-yGe"/>
-                                    <action selector="send_image:" destination="BYZ-38-t0r" eventType="touchUpInside" id="q3V-f5-lqK"/>
+                                    <action selector="selectImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jfH-ao-UwA"/>
                                 </connections>
                             </button>
                         </subviews>
